@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooling Fan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+        <div class="main">
+            <div class="fan">
+                <img src="images/cover.webp" alt="Cover" class="cover">
+                <img src="images/blades.webp" alt="Fan" class="Fan">
+            </div>
+            <div class="buttons">
+                    <button class="btn" onclick="stop()">OFF</button>
+                    <button class="btn" onclick="on()">ON</button>
+                    <button class="btn" onclick="low()">1</button>
+                    <button class="btn" onclick="medium()">2</button>
+                    <button class="btn" onclick="fast()">3</button>
+            </div>
+        </div>
+        <script >
+            const click_sound=new Audio("click.mp3");
+            const start=new Audio("fanloop.mp3");
+            const light=new Audio("lightfan.mp3");
+            const high=new Audio("highspeed.mp3");
+            let buttons=document.querySelectorAll(".btn");
+            let fan=document.querySelector(".Fan");
+            
+            buttons.forEach(e=>{
+                e.addEventListener("click",()=>{
+                    click_sound.play();
+                })
+            })
+            function audio() {
+                start.pause();
+                light.pause();
+                high.pause();
+            }
+            function stop() {
+                fan.style.animationDuration="0s";
+                audio();
+            }
+            function on() {
+                fan.style.animationDuration="1.5s";
+                audio();
+                start.play();
+                    start.addEventListener("ended",()=>{
+                        start.play();
+                    });
+            }
+            function low() {
+                fan.style.animationDuration="1s";
+                audio();
+                light.play();
+                    light.addEventListener("ended",()=>{
+                        light.play();
+                    });
+            }
+            function medium() {
+                fan.style.animationDuration="0.7s";
+                audio();
+                light.play();
+                    light.addEventListener("ended",()=>{
+                        light.play();
+                    });
+            }
+            function fast() {
+                fan.style.animationDuration="0.2s";
+                audio();
+                high.play();
+                    high.addEventListener("ended",()=>{
+                        high.play();
+                    });
+            }
+        </script>
+</body>
+</html>

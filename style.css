@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 60px;
+}
+
+.fan {
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+
+}
+
+.cover {
+    height: 350px;
+}
+
+.Fan {
+    height: 355px;
+    position: relative;
+    top: -350px;
+    animation: rotate infinite 0s linear;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.buttons{
+    background-color: white;
+    padding: 8px 30px;
+    box-shadow: inset -2px 0px 5px 0px black;
+    border-radius: 30px;
+    margin: auto;
+}
+
+.btn {
+    background-color: white;
+    border: none;
+    box-shadow: inset -2px -1px 4px 0px black;
+    padding: 20px;
+    border-radius: 31px;
+     font-family: "Josefin Sans", sans-serif;
+    font-weight: 700;
+    font-style: oblique;
+    cursor: pointer;
+    margin: 2px;
+}
+
+.btn:hover{
+    box-shadow: -1px 0px 5px 0px black;
+}
+
+@media screen and (max-width:600px) {
+ .cover,.Fan{
+    height: 300px;
+ }   
+ .Fan{
+    top: -300px;
+ }
+ .btn{
+    padding: 15px;
+ }
+ .buttons{
+    padding: 8px 20px;
+
+ }
+}
+@media screen and (max-width:300px) {
+ .cover,.Fan{
+    height: 230px;
+ }   
+ .Fan{
+    top: -230px;
+ }
+ .btn{
+    padding: 10px;
+ }
+ .buttons{
+    padding: 8px 12px;
+
+ }
+}
