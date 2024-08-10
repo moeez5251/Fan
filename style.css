@@ -69,10 +69,10 @@
 
 @media screen and (max-width:600px) {
  .cover,.Fan{
-    height: 300px;
+    height: 230px;
  }   
  .Fan{
-    top: -300px;
+    top: -230px;
  }
  .btn{
     padding: 15px;
@@ -84,10 +84,10 @@
 }
 @media screen and (max-width:300px) {
  .cover,.Fan{
-    height: 230px;
+    height: 200px;
  }   
  .Fan{
-    top: -230px;
+    top: -200px;
  }
  .btn{
     padding: 10px;
